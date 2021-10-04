@@ -4,6 +4,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
+import config
 
 df = pd.read_csv('gapminderDataFiveYear.csv')
 
@@ -72,4 +73,4 @@ def update_figure(selected_year):
         )
     }
 if __name__ == '__main__':
-    app.run_server(host="0.0.0.0",port=1235,threaded=True,dev_tools_hot_reload=True,dev_tools_hot_reload_interval=5000, dev_tools_hot_reload_max_retry=30)
+    app.run_server(host=config.host,port=config.porte,threaded=config.threaded,dev_tools_hot_reload=config.dev_tools_hot_reload,dev_tools_hot_reload_interval=config.dev_tools_hot_reload_interval, dev_tools_hot_reload_max_retry=config.dev_tools_hot_reload_max_retry)
