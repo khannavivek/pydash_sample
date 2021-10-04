@@ -73,4 +73,4 @@ def update_figure(selected_year):
         )
     }
 if __name__ == '__main__':
-    app.run_server(host=config.host,port=config.porte,threaded=config.threaded,dev_tools_hot_reload=config.dev_tools_hot_reload,dev_tools_hot_reload_interval=config.dev_tools_hot_reload_interval, dev_tools_hot_reload_max_retry=config.dev_tools_hot_reload_max_retry)
+    app.run_server(host=config.host,port=config.port,threaded=config.threaded,dev_tools_hot_reload=config.dev_tools_hot_reload,dev_tools_hot_reload_interval=config.dev_tools_hot_reload_interval, dev_tools_hot_reload_max_retry=config.dev_tools_hot_reload_max_retry)
