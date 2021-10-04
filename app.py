@@ -17,10 +17,11 @@ year_options = []
 for year in df['year'].unique():
     year_options.append({'label':str(year),'value':year})
 
-app.layout = html.Div([
-    dcc.Graph(id='graph'),
-    dcc.Dropdown(id='year-picker',options=year_options,value=df['year'].min())
-    dcc.Graph(id='scatterplot',
+app.layout = html.Div(
+    [
+        dcc.Graph(id='graph'),
+        dcc.Dropdown(id='year-picker',options=year_options,value=df['year'].min())
+        dcc.Graph(id='scatterplot',
                             figure= {'data':[
                                     go.Scatter(
                                         x=random_x,
@@ -40,12 +41,9 @@ app.layout = html.Div([
                                                         xaxis={'title':'Some X title'})
 
                             }
-
-
-
-
-)
-])
+                        )
+                ]
+            )
 
 @app.callback(Output('graph', 'figure'),
               [Input('year-picker', 'value')])
