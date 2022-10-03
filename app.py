@@ -11,14 +11,12 @@ df = pd.read_csv('gapminderDataFiveYear.csv')
 app = dash.Dash()
 
 
-# https://dash.plot.ly/dash-core-components/dropdown
-# We need to construct a dictionary of dropdown values for the years
 year_options = []
 for year in df['year'].unique():
     year_options.append({'label':str(year),'value':year})
 
 app.layout = html.Div(
-    [
+           [   
         dcc.Graph(id='graph'),
         dcc.Dropdown(id='year-picker',options=year_options,value=df['year'].min())
         dcc.Graph(id='scatterplot',
