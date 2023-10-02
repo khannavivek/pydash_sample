@@ -1,5 +1,5 @@
 host="0.0.0.0"
-port=1235
+port=7777
 threaded=True
 
 dev_tools_hot_reload=True
